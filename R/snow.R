@@ -34,6 +34,7 @@ SnowflakeConnector <- function(path_jar = "/home/rstudio/project/snowflake-jdbc-
 #' conn <- SnowflakeConnector()
 #' q <- "SELECT * FROM GOLD.MRKT_FRCST.STG_WEATHER LIMIT 5"
 #' fetch_data(query = q, jdbc_driver = conn)
+#'
 #' @export
 fetch_data <- function(query,
                        jdbc_Driver,
@@ -47,15 +48,15 @@ fetch_data <- function(query,
 
   readRenviron(path_env)
 
-  jdbcConnection <- dbConnect(jdbc_Driver,
+  jdbcConnection <- DBI::dbConnect(jdbc_Driver,
                               "jdbc:snowflake://usfoods.snowflakecomputing.com",
                               snowflake_username,
                               snowflake_password)
-  dbSendQuery(jdbcConnection, paste0("USE WAREHOUSE ", warehouse))
-  dbSendQuery(jdbcConnection, paste0("USE ROLE ", role))
-  dbSendQuery(jdbcConnection, paste0("USE DATABASE ", database))
-  dbSendQuery(jdbcConnection, paste0("USE SCHEMA ", schema))
-  return (dbGetQuery(jdbcConnection, query))
+  DBI::dbSendQuery(jdbcConnection, paste0("USE WAREHOUSE ", warehouse))
+  DBI::dbSendQuery(jdbcConnection, paste0("USE ROLE ", role))
+  DBI::dbSendQuery(jdbcConnection, paste0("USE DATABASE ", database))
+  DBI::dbSendQuery(jdbcConnection, paste0("USE SCHEMA ", schema))
+  return (DBI::dbGetQuery(jdbcConnection, query))
 }
 
 #R CMD javareconf
