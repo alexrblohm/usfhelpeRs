@@ -17,3 +17,6 @@ The JDBC driver
 \description{
 This function sets up a connection with Snowflake
 }
+\examples{
+driver <- SnowflakeConnector()
+}

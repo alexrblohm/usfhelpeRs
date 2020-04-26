@@ -41,3 +41,8 @@ Data Frame
 \description{
 This function uses the SnowflakeConnector to pull a data set.
 }
+\examples{
+driver <- SnowflakeConnector()
+q <- "SELECT * FROM GOLD.MRKT_FRCST.STG_WEATHER LIMIT 5"
+fetch_data(query = q)
+}

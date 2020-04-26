@@ -4,7 +4,7 @@
 #'
 #' @param path_jar (str) Path to the snowflake .jar file.  Default set in docker container
 #' @return The JDBC driver
-#' @example driver <- SnowflakeConnector()
+#' @examples driver <- SnowflakeConnector()
 #' @export
 SnowflakeConnector <- function(path_jar = "/home/rstudio/project/snowflake-jdbc-3.11.1.jar"){
   options(java.parameters = "-Xmx12072m")
@@ -29,7 +29,7 @@ SnowflakeConnector <- function(path_jar = "/home/rstudio/project/snowflake-jdbc-
 #' @param database (str) database, default "GOLD"
 #' @param schema (str) schema, defaul "XDMADM"
 #' @return Data Frame
-#' @example driver <- SnowflakeConnector()
+#' @examples driver <- SnowflakeConnector()
 #' q <- "SELECT * FROM GOLD.MRKT_FRCST.STG_WEATHER LIMIT 5"
 #' fetch_data(query = q)
 #' @export
