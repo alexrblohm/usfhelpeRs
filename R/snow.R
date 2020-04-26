@@ -8,8 +8,6 @@
 #' @export
 SnowflakeConnector <- function(path_jar = "/home/rstudio/project/snowflake-jdbc-3.11.1.jar"){
   options(java.parameters = "-Xmx12072m")
-  #Read in Environment variables
-  readRenviron(path_env)
 
   jdbcDriver <- dplyr.snowflakedb::JDBC(driverClass="com.snowflake.client.jdbc.SnowflakeDriver",
                                         classPath=path_jar)
