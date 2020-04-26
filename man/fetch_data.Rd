@@ -6,7 +6,7 @@
 \usage{
 fetch_data(
   query,
-  jdbc_Driver = jdbcDriver,
+  jdbc_Driver,
   path_env = "/home/rstudio/project/.env",
   snowflake_username = Sys.getenv("SNOWFLAKE_USER"),
   snowflake_password = Sys.getenv("SNOWFLAKE_PASSWORD"),
@@ -42,7 +42,7 @@ Data Frame
 This function uses the SnowflakeConnector to pull a data set.
 }
 \examples{
-driver <- SnowflakeConnector()
+conn <- SnowflakeConnector()
 q <- "SELECT * FROM GOLD.MRKT_FRCST.STG_WEATHER LIMIT 5"
-fetch_data(query = q)
+fetch_data(query = q, jdbc_driver = conn)
 }
