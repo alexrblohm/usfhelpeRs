@@ -10,3 +10,4 @@ test <- function (test_word = ''){
   return(print(paste("It works",test_word)))
 }
 test("Woo")
+#devtools::document()

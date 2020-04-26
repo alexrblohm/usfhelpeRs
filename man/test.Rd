@@ -15,3 +15,6 @@ A str that says it works and the extra
 \description{
 This is a simple "hello world" type of function
 }
+\examples{
+test("Whoohooo")
+}
