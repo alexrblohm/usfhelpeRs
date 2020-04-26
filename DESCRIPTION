@@ -16,4 +16,4 @@ RoxygenNote: 7.1.0
 Imports:
 	tidyverse,
 	dplyr.snowflakedb,
-	data.table (>= 1.9.4)
+	RJDBC

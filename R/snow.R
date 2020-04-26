@@ -9,7 +9,7 @@
 SnowflakeConnector <- function(path_jar = "/home/rstudio/project/snowflake-jdbc-3.11.1.jar"){
   options(java.parameters = "-Xmx12072m")
 
-  jdbcDriver <- dplyr.snowflakedb::JDBC(driverClass="com.snowflake.client.jdbc.SnowflakeDriver",
+  jdbcDriver <- RJDBC::JDBC(driverClass="com.snowflake.client.jdbc.SnowflakeDriver",
                                         classPath=path_jar)
   return(jdbcDriver)
 }
@@ -29,8 +29,7 @@ SnowflakeConnector <- function(path_jar = "/home/rstudio/project/snowflake-jdbc-
 #' @param database (str) database, default "GOLD"
 #' @param schema (str) schema, defaul "XDMADM"
 #' @return Data Frame
-#' @example
-#' driver <- SnowflakeConnector()
+#' @example driver <- SnowflakeConnector()
 #' q <- "SELECT * FROM GOLD.MRKT_FRCST.STG_WEATHER LIMIT 5"
 #' fetch_data(query = q)
 #' @export
