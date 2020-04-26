@@ -25,7 +25,7 @@ fetch_data(
 
 \item{snowflake_username}{(str) Username, default from .env}
 
-\item{snowflake_password}{(str) password, default from .env}
+\item{snowflake_password}{(str) Password, default from .env}
 
 \item{warehouse}{(str) warehouse, default "USER_ADHOC"}
 
